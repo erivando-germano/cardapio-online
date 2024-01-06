@@ -1,6 +1,7 @@
 
 
 const controllers = () => {
+
     const login = async (req) => {
         return { retorno: "OK" };
     };
@@ -11,4 +12,4 @@ const controllers = () => {
 
 }
 
-module.exports = Object.assign({controllers})
+module.exports = Object.assign({ controllers })

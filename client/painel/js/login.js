@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     login.event.init();
 });
 
@@ -6,20 +6,19 @@ var login = {};
 
 login.event = {
 
-    init: ( )=> {
+    init: () => {
 
         document.querySelector("#btnLogin").onclick = () => {
             login.method.validarLogin();
         }
-        
+
     }
 
 }
 
 login.method = {
 
-    // valida os campos
-
+    // Valida os campos
     validarLogin: () => {
 
         let email = document.querySelector("#txtEmailLogin").value.trim();
@@ -41,7 +40,7 @@ login.method = {
 
     },
 
-     //método que faz o login (via API)
+    // método que faz o login (via API)
     login: (email, senha) => {
 
         var dados = {
@@ -50,7 +49,7 @@ login.method = {
         }
 
         app.method.post('/login', JSON.stringify(dados),
-            (response) =>{
+            (response) => {
 
                 console.log(response);
 
@@ -58,7 +57,6 @@ login.method = {
             (error) => {
                 console.log(error);
             }, true
-        
         )
 
     }
